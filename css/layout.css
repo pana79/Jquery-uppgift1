@@ -1,0 +1,69 @@
+:root{
+    --colorOne:rgba(211, 179, 91, 0.534);
+    --colorTwo:rgb(150, 116, 4);
+    --colorThree:rgba(150, 116, 4, 0.692);
+    --ofWhite:rgb(250, 246, 233);
+}
+*,*::before,*::after{
+    box-sizing: border-box;
+    text-decoration-line: none;
+}
+
+.loginContent{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image:url("/images/art-backlit-city-coast-175659.jpg");
+    background-repeat: none;
+    background-size: cover;
+    background-position-x: -13rem;
+}
+.loginForm{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--colorOne);
+    width:20rem;
+    height: 20rem;
+    border-radius: 0.4rem;   
+}
+
+.h1{
+    font-size: 2rem;
+    color:var(--colorTwo);
+    text-align: center;
+    
+}
+.link{
+    color: var(--colorTwo);
+    margin: 2rem;
+    font-size: 1.5rem;
+}
+
+@media (min-width:769px ){
+    .loginForm{
+        width:30rem;    
+    }
+    .loginForm__items{
+        margin:0.3rem 2rem;
+    }
+    .loginContent{
+        background-position-x: 0rem;
+        /* background-position-y: -20rem; */
+    }
+    .h1{
+        font-size: 2rem;
+        color:var(--colorTwo)
+    }
+}
+
+@media (min-width:992px ){
+    .loginForm{
+        width:30rem;    
+    }
+    .loginForm__items{
+        margin:0.4rem 2rem;
+    }
+}
