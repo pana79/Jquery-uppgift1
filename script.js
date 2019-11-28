@@ -1,23 +1,25 @@
-$(function){
+$(function(){
     function validateInput(id){
-        if()
 
 
     }
 
+    $('#userName').focusout(function(){
+        validateInput('#userName')
+        console.log('trigged')
+    })
+    $('#password').focusout(function(){
+        validateInput('#password')
+        console.log('trigged')
+    })
 
-$('#firstName').keyup(function(){
-    validateInput('#fistName')
-    console.log('trigged')
+    // $('#rpassword').submit((e)=> {
+    //     e.preventDefault()
+
+    //     validateInput('#fistName')
+    //     validateInput('#lastName')
+
+
+    // })
+
 })
-
-$('#regForm').submit(e)=> {
-    e.preventDefault();
-
-    validateInput('#fistName')
-    validateInput('#lastName')
-
-
-}
-
-}
