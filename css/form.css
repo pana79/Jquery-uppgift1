@@ -8,6 +8,9 @@
     margin:0.3rem 0.8rem;
     background-color: var(--ofWhite);
 }
+.form__input.-large {
+    height: 15.5rem;
+}
 .form__input.-primary{
     /* border: 2px solid var(--colorFor); */
     transition: all 0.15s ease-in-out;
@@ -45,10 +48,52 @@
     background-color:var(--colorThree);
    
 }
+
+/*--------------------------- form__textarea --------------------------- */
+
+.form__textarea{
+    resize: none;
+}
 /*--------------------------- form__link --------------------------- */
 
 .form__link{
     color: var(--ofWhite);
     margin: 0rem 1.5rem;
     font-size: 1rem;
+}
+/*--------------------------- form__radio and label --------------------------- */
+/* .form__radio{
+    height: 1.5rem;
+    width: 1.5rem;
+    color:var(--colorTwo)
+} */
+input[type=radio] {
+    position: absolute;
+    visibility: hidden;
+    display: none;
+  }
+label {
+    color: var(--colorTwo);
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.3rem 1rem;
+   
+}
+input[type=radio]:checked +label{
+    color:var(--ofWhite);
+    background: var(--colorTwo);
+}
+label + input[type=radio] +label{
+    border-left: solid 0.3rem var(--colorTwo);
+}
+
+
+  
+/*--------------------------- form__checkbox --------------------------- */
+.form__checkBox{
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 1rem 1rem;
+    color:var(--colorTwo)
 }
