@@ -26,10 +26,44 @@
     justify-content: center;
     background-color: var(--colorOne);
     width:20rem;
-    height: 20rem;
+    height: 15rem;
     border-radius: 0.8rem;   
 }
+.registerContent{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image:url("/images/art-backlit-city-coast-175659.jpg");
+    background-repeat: none;
+    background-size: cover;
+    background-position-x: -13rem;
+   
+}
+.registerForm{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--colorOne);
+    width:20rem;
+    height: 4 0rem;
+    border-radius: 0.8rem; 
+    padding: 2rem 0rem;
+    
+}
+.radioContainer {
+    display:flex;
+    justify-content: center;
+    border: solid 3px var(--colorTwo);
+    display: inline-block;
+    margin: 0.6rem 0.8rem;
+    border-radius: 10px;
+    overflow: hidden;
+    /* width: 16rem; */
 
+   
+}
 .h1{
     font-size: 2rem;
     color:var(--colorTwo);
@@ -57,8 +91,14 @@
         font-size: 2rem;
         color:var(--colorTwo)
     }
+    .registerForm{
+        width:30rem;
+    }
+    .registerContent{
+        background-position-x: 0rem;
+        /* background-position-y: -20rem; */
+    }
 }
-
 @media (min-width:992px ){
     .loginForm{
         width:30rem;    
