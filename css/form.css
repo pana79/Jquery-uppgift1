@@ -1,4 +1,5 @@
- 
+
+
 /*--------------------------- form__input --------------------------- */
 .form__input {
     padding: .4rem .7rem; 
@@ -7,20 +8,33 @@
     font-size: 1.2rem;
     margin:0.3rem 0.8rem;
     background-color: var(--ofWhite);
+    
 }
 .form__input.-large {
     height: 15.5rem;
 }
 .form__input.-primary{
-    /* border: 2px solid var(--colorFor); */
-    transition: all 0.15s ease-in-out;
+    /* transition:all 0.5s ease-in-out; */
     border-radius: 0.4rem;
-    border:none;
+    border:none;    
+}
+.form__input.-success {    
+    background-image: url("../images/icon-tick-gold.png");
+    background-size: 35px 35px;
+    background-position:right center;
+    background-repeat: no-repeat;
+    color:var(--colorTwo);
+}
+.form__input.-error {    
+    background-image: url("../images/cross.svg");
+    background-size: 35px 35px;
+    background-position:right center;
+    background-repeat: no-repeat;  
 }
 .form__input:focus {
     outline: 0;
-    border-color: var(--colorTwo);
-    box-shadow: 0 0 0.20rem 0.15rem var(--colorTwo);
+    border: solid 1px rgb(216, 157, 48);;
+    box-shadow: 0 0 0.20rem 0.2rem var(--colorTwo);
 }
 .form__input::placeholder{
     opacity: 0.4;
@@ -29,7 +43,7 @@
 
 .form__btn{
     height: 2.5rem;
-    width:10rem;
+    width:12rem;
     margin:1rem 0.8rem;
 }
 .form__btn.-primary{
@@ -62,38 +76,67 @@
     font-size: 1rem;
 }
 /*--------------------------- form__radio and label --------------------------- */
-/* .form__radio{
-    height: 1.5rem;
-    width: 1.5rem;
-    color:var(--colorTwo)
-} */
-input[type=radio] {
-    position: absolute;
-    visibility: hidden;
-    display: none;
-  }
-label {
-    color: var(--colorTwo);
-    display: inline-block;
+/* .option{
+    height: 4rem;
+    width: 6rem;
+     
+    position: relative; 
+}
+.option__label{
+    font-size: 1.3rem;
     cursor: pointer;
-    font-weight: bold;
-    padding: 0.3rem 1rem;
-   
-}
-input[type=radio]:checked +label{
-    color:var(--ofWhite);
-    background: var(--colorTwo);
-}
-label + input[type=radio] +label{
-    border-left: solid 0.3rem var(--colorTwo);
+    color: var(--colorTwo);
+
 }
 
+.option__label::before{
+    content:"";
+    position:absolute;
+    left:10%;
+    top:30%;
+    width:2rem;
+    height: 2rem;
+    border:3px solid var(--colorTwo);
+    border-radius: 50%;
+    box-shadow: 0 0 3px var(--colorThree);
+}
+.option__label::after{
+    content:"";
+    position:absolute;
+    left:16%;
+    top:39%;
+    width:1.3rem;
+    height: 1.3rem;
+    background-color:var(--colorTwo);
+    border-radius: 50%;
+    box-shadow: 0 0 3px var(--colorThree);
+    opacity:0;
+    transition:opacity 0.4s
+}
+.option__input{
+    display: none;
+}
 
+.option__input:checked ~ .option__label::before{
+    opacity:1;
+} */
   
 /*--------------------------- form__checkbox --------------------------- */
-.form__checkBox{
+/* .form__checkBox{
     height: 1.5rem;
     width: 1.5rem;
     margin: 1rem 1rem;
     color:var(--colorTwo)
+} */
+
+/*--------------------------- form__select --------------------------- */
+select{
+    width: 30%;
+}
+/*--------------------------- errorMessage --------------------------- */
+.errorMessage{
+    margin:0.3rem 1rem;
+    color:rgb(100, 59, 24);
+    font-weight: 600;
+    display:none;
 }
