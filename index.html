@@ -14,14 +14,41 @@
 
 <section class="loginContent">
     <h1 class="h1">Dance is for everyone!</h1>
-    <div class="loginForm">
+    <form id="loginForm" class="loginForm">
+        <input class="form__input -primary" type="text" id="email" placeholder="e-mail" autofocus>
+        <input class="form__input -primary" type="text" id="password" placeholder="password">
+        <button class="form__btn -primary" type="submit" id="submitLogin">Login </button>
+        <a class="form__link" href="#">forgot your password?</a>
+    </form>
+    <a class="link" id="" href="registration.html">Register a new account</a>
+</section>
+
+<!-- <section class="regContent">
+    <h1 class="h1">Great!! Soon you are one of us!!</h1>
+    <form class="regForm">
+        <input class="form__input -primary" type="text" id="firstName" placeholder="name">
+        <input class="form__input -primary" type="text" id="lastName" placeholder="sure name">
         <input class="form__input -primary" type="text" id="email" placeholder="e-mail">
         <input class="form__input -primary" type="text" id="password" placeholder="password">
-        <button type="submit" class="form__btn -primary">Login </button>
-        <a class="form__link" href="#">forgot your password?</a>
-    </div>
-    <a class="link" href="registration.html">Register a new account</a>
-</section>
+        <textarea type="text"
+                        class="form__textarea form__input -primary -large"
+                        id="message" name="message" placeholder="Tell us about your dance experience"></textarea>      
+        <div class="radioContainer">
+                <input class="" type="radio" id="male" name="gender">
+                <label for="male">Male</label> 
+                <input class="form__radio" type="radio" id="female" name="gender">
+                <label for="female">Female</label>            
+                <input class="form__radio" type="radio" id="other" name="gender" checked>
+                <label for="other">Other</label>
+        </div>
+        <div class="row">
+                <input class="form__checkBox" type="checkbox" id="sendInfo">
+                <label for="sendInfo">I dont want to recieve information about funny stuff </label>
+        </div> 
+        <button class="form__btn -primary" type="submit" id ="submitNewAccount" >creat account </button>   
+    </form>
+    <a class="link" href="index.html">sign in with an existing account</a>
+</section> -->
 
 
 
