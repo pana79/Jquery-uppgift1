@@ -1,10 +1,14 @@
 $(function()
 {
+        var formValid=false;
+        var agreeValid=false;
         var levelSelected=false;
-        var firstName=false;
-        var lastName=false;
-        var email=false;
-        var password=false;
+        var genderSelected=false;
+        var firstNameValid=false;
+        var lastNameValid=false;
+        var emailValid=false;
+        var passwordValid=false;
+
   
 //-------------------------- validate First Name -------------------------------------------------
     function validateFirstName()
@@ -19,16 +23,16 @@ $(function()
             errMes.show();
             elem.addClass('-error');
             elem.removeClass('-success');
-            firstName=false;
+            firstNameValid=false;
         }
         else   
         {
             errMes.hide();
             elem.addClass('-success');
             elem.removeClass('-error');
-            firstName=true;
+            firstNameValid=true;
         }
-        console.log(firstName)
+        console.log(firstNameValid)
     }
 //-------------------------- validate Last Name -------------------------------------------------
     function validateLastName()
@@ -44,16 +48,16 @@ $(function()
             errMes.show();
             elem.addClass('-error');
             elem.removeClass('-success');
-            lastName=false;
+            lastNameValid=false;
         }
         else   
         {
             errMes.hide();
             elem.addClass('-success');
             elem.removeClass('-error');
-            lastName=true;
+            lastNameValid=true;
         }
-        console.log(lastName)
+        console.log(lastNameValid)
     }
 
 //-------------------------- validate email -------------------------------------------------
@@ -70,16 +74,16 @@ $(function()
             errMes.hide();
             elem.removeClass('-error');
             elem.addClass('-success');
-            email=true;
+            emailValid=true;
         }
         else{
             errMes.html("<span>Please enter your email</span>");
             errMes.show();
             elem.addClass('-error');
             elem.removeClass('-success');
-            email=false;
+            emailValid=false;
         }    
-        console.log(email);
+        console.log(emailValid);
     }
 //-------------------------- validate password -------------------------------------------------
     function validatePassword() 
@@ -95,7 +99,7 @@ $(function()
             errMes.hide()
             elem.removeClass("-error");    
             elem.addClass("-success");
-            password=true;
+            passwordValid=true;
         } 
         else 
         {
@@ -103,8 +107,9 @@ $(function()
             errMes.show();
             elem.removeClass("-success");    
             elem.addClass("-error");
-            password=false;
+            passwordValid=false;
         }
+        console.log(passwordValid);
     }
 //-------------------------- calling validate select level -------------------------------------------------
    
@@ -127,8 +132,7 @@ $(function()
                 errMes.show()
                 messageValid = false;
                 elem.removeClass("-success");    
-                elem.addClass("-error");
-                
+                elem.addClass("-error");  
             }
     }
     //-------------------------- calling validate select level -------------------------------------------------
@@ -148,43 +152,102 @@ $(function()
     function validateGender()
     {
         console.log('validateGender')
-        let elem=$("input[name='radPROG']:checked")
+        let elem=$("input[name='gender']:checked")
         let valGender = elem.val();
         genderSelected = true;
         console.log(valGender);
         console.log(genderSelected)
     }
+//-------------------------- verify policy is checked -------------------------------------------------
        
-    
-//-------------------------- calling validate functions -------------------------------------------------
-    // $('regForm').submit(function(e) {
-    //     e.preventDefault();
-    // })
+    $("#agree").change(cboAgree );
+    function cboAgree() 
+        {
+            let errMes=$('#errorMessage6');
 
-       
-        $('#firstName').focusout(function()
-        {
-            validateFirstName();
-        })
-        $('#lastName').focusout(function()
-        {
-            validateLastName();
-        })
-        $('#email').focusout(function()
-        {
-            validateEmail();   
-        })
-        $('#password').focusout(function()
-        {
-            validatePassword();   
-        })
-        $('#message').focusout(function()
-        {
-            console.log(4)
-            validateMessage();   
-        })
-        $("#entryLevel").change(validateEntryLevel);
-        $("input[name='gender']").change(validateGender);
+            if ( $(this).prop("checked")) 
+                { 
+                    var sure = confirm("Are you sure?");
+                    this.checked = sure;
+                    
+                    if (sure) 
+                    {
+                        agreeValid = true;
+                    }
+                    else 
+                    {
+                        agreeValid = false;
+                    }
+                } 
+            else 
+                {
+                    agreeValid = false;
+                    errMes.html("<span>cYou cannot register if you do not accept the site\'s policy.</span>");
+                }
+        }
+//-------------------------- calling validate functions -------------------------------------------------
+function validateForm()
+{
+    console.log('validateForm')
+    if ( firstNameValid  && lastNameValid && emailValid &&  messageValid && passwordValid && agreeValid && levelSelected  && genderSelected )
+    {
+        formValid=true;
+    } 
+    else 
+    {
+        formValid=false;
+    }
+    
+    console.log(formValid)
+    console.log('*******Form content************')
+    console.log(agreeValid)
+    console.log(levelSelected)
+    console.log(genderSelected)
+    console.log(firstNameValid)
+    console.log(lastNameValid)
+    console.log(emailValid)
+    console.log(passwordValid)
+    console.log('**********************')
+}
+
+//-------------------------- calling validate functions -------------------------------------------------
+   
+
+    $('#regForm').on('submit', function(e) {
+        //förhindra att den skickar datat och laddar om sidan
+        e.preventDefault();
+        validateForm();
+    });
+    $('#loginForm').on('submit', function(e) {
+        //förhindra att den skickar datat och laddar om sidan
+        e.preventDefault();
+        validateForm();
+    });
+
+    
+    $('#firstName').focusout(function()
+    {
+        validateFirstName();
+    })
+    $('#lastName').focusout(function()
+    {
+        validateLastName();
+    })
+    $('#email').focusout(function()
+    {
+        validateEmail();   
+    })
+    $('#password').focusout(function()
+    {
+        validatePassword();   
+    })
+    $('#message').focusout(function()
+    {
+        console.log(4)
+        validateMessage();   
+    })
+    $("#entryLevel").change(validateEntryLevel);
+    $("input[name='gender']").change(validateGender);
   
 })
     // $('#userName').focusout(function(){
