@@ -7,40 +7,60 @@
 
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/validation.css">
 
     <title>Login</title>
 </head>
 <body>
 
-<section class="registerContent">
+<section class="regContent">
     <h1 class="h1">Great!! Soon you are one of us!!</h1>
-    <div class="registerForm">
-        <input class="form__input -primary" type="text" id="firstName" placeholder="name">
-        <input class="form__input -primary" type="text" id="lastName" placeholder="sure name">
+    <form id="regForm" class="regForm">
+        <input class="form__input -primary" type="text" id="firstName" placeholder="first name" autofocus>
+        <span id="errorMessage1" class="errorMessage"> </span>
+        <input class="form__input -primary" type="text" id="lastName" placeholder="last name">
+        <span id="errorMessage2" class="errorMessage"> </span>
         <input class="form__input -primary" type="text" id="email" placeholder="e-mail">
+        <span id="errorMessage3" class="errorMessage"> </span>
         <input class="form__input -primary" type="text" id="password" placeholder="password">
-        <textarea type="text"
-                        class="form__textarea form__input -primary -large"
-                        id="message" name="message" placeholder="Tell us about your dance experience"></textarea>
+        <span id="errorMessage4" class="errorMessage"> </span>
+        <textarea class="form__textarea form__input -primary -large" type="text"
+                        id="message" name="message" placeholder="Tell us about your dance experience"></textarea>      
+    
+        <span id="errorMessage5" class="errorMessage"> </span>
+       <div class="radioContainer">
        
-        <div class="radioContainer">
-                <input class="" type="radio" id="male" name="gender">
-                <label for="male">Male</label> 
-                <input class="form__radio" type="radio" id="female" name="gender">
-                <label for="female">Female</label>            
-                <input class="form__radio" type="radio" id="other" name="gender" checked>
-                <label for="other">Other</label>
+                <div class="option">
+                    <input class="option__input" type="radio" value="male" name="gender">
+                    <label class="option__label" for="male">Male</label> 
+                 </div>
+                 <div class="option">
+                    <input class="option__input" type="radio" value="female" name="gender">
+                    <label class="option__label"for="female">Female</label>  
+                </div> 
+                <div class="option">         
+                    <input class="option__input" type="radio" value="other" name="gender">
+                    <label class="option__label" for="other">Other</label>
+                </div>
         </div>
+       
         <div class="row">
-                <input class="form__checkBox" type="checkbox" id="sendInfo">
-                <label for="sendInfo">I dont want to recieve information about funny stuff </label>
-        </div>
-        
-        <button type="submit" class="form__btn -primary">creat account </button>
-     
+                <input class="form__checkBox" type="checkbox" id="agree">
+                <label for="agree">Do you accept ower webpolicy </label>
+        </div> 
+        <span id="errorMessage6" class="errorMessage"> </span>
+        <p>select your level</p>
+        <select id="entryLevel">
+            <option value="0" disabled selected>--- Please select ---</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Improver">Improver</option>
+            <option value="Intermidate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select> 
+          
        
-       
-    </div>
+          <button class="form__btn -primary" type="submit" id ="submitNewAccount" >create account </button>   
+    </form>
     <a class="link" href="index.html">sign in with an existing account</a>
 </section>
 
