@@ -8,6 +8,7 @@ $(function()
         var lastNameValid=false;
         var emailValid=false;
         var passwordValid=false;
+        var messageValid=false;
 
   
 //-------------------------- validate First Name -------------------------------------------------
@@ -116,7 +117,7 @@ $(function()
     
     function validateMessage() 
     {
-        let errMes= $('#errorMessage4');
+        let errMes= $('#errorMessage5');
         let elem=$("#message");
         let details = elem.val();
     
@@ -129,7 +130,8 @@ $(function()
             } 
         else 
             {
-                errMes.show()
+                errMes.html("<span>Shortest message is 15 letters</span>");
+                errMes.show();
                 messageValid = false;
                 elem.removeClass("-success");    
                 elem.addClass("-error");  
@@ -182,22 +184,24 @@ $(function()
             else 
                 {
                     agreeValid = false;
-                    errMes.html("<span>cYou cannot register if you do not accept the site\'s policy.</span>");
+                    errMes.html("<span>You cannot register if you do not accept the site\'s policy.</span>");
+                    errMes.show();
                 }
         }
 //-------------------------- calling validate functions -------------------------------------------------
 function validateForm()
 {
     console.log('validateForm')
-    if ( firstNameValid  && lastNameValid && emailValid &&  messageValid && passwordValid && agreeValid && levelSelected  && genderSelected )
+    if ( firstNameValid  && lastNameValid && emailValid &&  messageValid && passwordValid && agreeValid && levelSelected  && genderSelected & messageValid)
     {
         formValid=true;
+        window.location.href = 'tack.html'
     } 
     else 
     {
         formValid=false;
     }
-    
+
     console.log(formValid)
     console.log('*******Form content************')
     console.log(agreeValid)
@@ -207,6 +211,7 @@ function validateForm()
     console.log(lastNameValid)
     console.log(emailValid)
     console.log(passwordValid)
+    console.log(messageValid)
     console.log('**********************')
 }
 
@@ -221,7 +226,7 @@ function validateForm()
     $('#loginForm').on('submit', function(e) {
         //förhindra att den skickar datat och laddar om sidan
         e.preventDefault();
-        validateForm();
+        window.location.href = 'kul.html'
     });
 
     
