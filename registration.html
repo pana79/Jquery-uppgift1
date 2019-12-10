@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,66 +12,77 @@
 
     <title>Login</title>
 </head>
+
 <body>
+        <!-- <div class="bg-image"></div> -->
+    <section class="regContent">
+            
+        <h1 class="h1">Great!! Soon you are one of us!!</h1>
+        <form id="regForm" class="regForm">
+            <input class="form__input -primary" type="text" id="firstName" placeholder="first name" autofocus>
+            <span id="errorMessage1" class="errorMessage"> </span>
+            <input class="form__input -primary" type="text" id="lastName" placeholder="last name">
+            <span id="errorMessage2" class="errorMessage"> </span>
+            <input class="form__input -primary" type="text" id="email" placeholder="e-mail">
+            <span id="errorMessage3" class="errorMessage"> </span>
+            <input class="form__input -primary" type="text" id="password" placeholder="password">
+            <span id="errorMessage4" class="errorMessage"> </span>
+            <textarea class="form__textarea form__input -primary -large" type="text" id="message" name="message"
+                placeholder="Tell us about your dance experience"></textarea>
 
-<section class="regContent">
-    <h1 class="h1">Great!! Soon you are one of us!!</h1>
-    <form id="regForm" class="regForm">
-        <input class="form__input -primary" type="text" id="firstName" placeholder="first name" autofocus>
-        <span id="errorMessage1" class="errorMessage"> </span>
-        <input class="form__input -primary" type="text" id="lastName" placeholder="last name">
-        <span id="errorMessage2" class="errorMessage"> </span>
-        <input class="form__input -primary" type="text" id="email" placeholder="e-mail">
-        <span id="errorMessage3" class="errorMessage"> </span>
-        <input class="form__input -primary" type="text" id="password" placeholder="password">
-        <span id="errorMessage4" class="errorMessage"> </span>
-        <textarea class="form__textarea form__input -primary -large" type="text"
-                        id="message" name="message" placeholder="Tell us about your dance experience"></textarea>      
-    
-        <span id="errorMessage5" class="errorMessage"> </span>
-       <div class="radioContainer">
-       
-                <div class="option">
-                    <input class="option__input" type="radio" value="male" name="gender">
-                    <label class="option__label" for="male">Male</label> 
-                 </div>
-                 <div class="option">
-                    <input class="option__input" type="radio" value="female" name="gender">
-                    <label class="option__label"for="female">Female</label>  
-                </div> 
-                <div class="option">         
-                    <input class="option__input" type="radio" value="other" name="gender">
-                    <label class="option__label" for="other">Other</label>
+            <span id="errorMessage5" class="errorMessage"> </span>
+            <div class="radioArea">
+                <p>Gender: </p>
+                <div class="radioContainer">
+
+                    <div class="option">
+                        <input class="option__input" type="radio" value="male" name="gender">
+                        <label class="option__label" for="male">Male</label>
+                    </div>
+                    <div class="option">
+                        <input class="option__input" type="radio" value="female" name="gender">
+                        <label class="option__label" for="female">Female</label>
+                    </div>
+                    <div class="option">
+                        <input class="option__input" type="radio" value="other" name="gender">
+                        <label class="option__label" for="other">Other</label>
+                    </div>
                 </div>
-        </div>
-       
-        <div class="row">
+            </div>
+            <span id="errorMessage6" class="errorMessage"> </span>
+
+            <div class="selectArea">
+                <p>Dance level:</p>
+                <select id="entryLevel" class="entryLevel">
+                    <option value="0" disabled selected>- Please select -</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Improver">Improver</option>
+                    <option value="Intermidate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+                
+            </div>
+            <span id="errorMessage7" class="errorMessage"> </span>
+
+            <button class="form__btn -primary" type="submit" id="submitNewAccount">create account </button>
+            <div class="checkArea">
                 <input class="form__checkBox" type="checkbox" id="agree">
-                <label for="agree">Do you accept ower webpolicy </label>
-        </div> 
-        <span id="errorMessage6" class="errorMessage"> </span>
-        <p>select your level</p>
-        <select id="entryLevel">
-            <option value="0" disabled selected>--- Please select ---</option>
-            <option value="Beginner">Beginner</option>
-            <option value="Improver">Improver</option>
-            <option value="Intermidate">Intermediate</option>
-            <option value="Advanced">Advanced</option>
-          </select> 
-          
+                <label for="agree"> <p>Do you accept ower webpolicy </p></label>
+            </div>
+            <span id="errorMessage8" class="errorMessage"> </span>
+        </form>
        
-          <button class="form__btn -primary" type="submit" id ="submitNewAccount" >create account </button>   
-    </form>
-    <a class="link" href="index.html">sign in with an existing account</a>
-</section>
+        <a class="link" href="index.html">sign in with an existing account &rarr;</a>
+    </section>
 
 
 
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
