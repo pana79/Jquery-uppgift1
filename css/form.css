@@ -32,11 +32,17 @@
     background-repeat: no-repeat;  
     margin-right: 1rem;
 }
-.form__input:focus {
-    /* outline: 0; */
+.form__input:focus{
+    outline: 0;
+   
+    outline-style:none;
+    box-shadow:none;
+    border-color:transparent;
     border: solid 1px var(--borderColer);
     box-shadow: 0 0 0.20rem 0.2rem var(--primaryColor-2);
+    
 }
+
 .form__input::placeholder{
     opacity: 0.4;
 }
