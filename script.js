@@ -199,6 +199,7 @@ $(function () {
 
         if (passwordValid && emailValid) {
             window.location.href = 'kul.html'
+            return true
 
         }
         confirm("Please correct your errors!");
@@ -253,7 +254,7 @@ $(function () {
     $('#email').focusout(function () {
         validateEmail();
     })
-    $('#password').focusout(function () {
+    $('#password').keyup(function () {
         validatePassword();
     })
     $('#message').focusout(function () {
