@@ -1,33 +1,47 @@
 :root{
-    --colorOne:rgba(211, 179, 91, 0.534);
-    --colorTwo:#967404;
-    --colorThree:rgba(150, 116, 4, 0.692);
-    --colorBoarder:rgb(150, 116, 4);
-    --ofWhite:rgb(250, 246, 233);
+    --primaryColor-1:rgb(211, 179, 91);
+    --primaryColor-2:rgb(149, 115, 4);
+    --primaryColor-3:rgb(110, 86, 5);
+
+    --borderColor:rgb(216, 157, 48);
+    
+    --primaryColor-1-opacity:rgba(211, 179, 91, 0.836);
+
+    --primaryWhite:rgb(250, 246, 233);
+    --primaryBlack:rgb(68, 68, 68);
+    --error:rgb(110, 45, 19);
 }
+
+
 *,*::before,*::after{
     box-sizing: border-box;
     text-decoration-line: none;
 }
-
+html{
+    font-size: 62.5%;
+}
+p{font-size: 1.3rem}
 .loginContent{
-    height: 100vh;
+    height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image:url("/images/art-backlit-city-coast-175659.jpg");
+    background-image: url("/images/art-backlit-city-coast-175659.jpg");
     background-repeat: none;
     background-size: cover;
     background-position-x: -13rem;
+    /* filter: blur(8px);
+    -webkit-filter: blur(8px); */
 }
 .loginForm{
     display:flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--colorOne);
-    width:20rem;
-    height: 15rem;
+    background-color:var(--primaryColor-1-opacity);
+    /* background-color:var(--primary-color-1); */
+    width:28rem;
+    height: 18rem;
     border-radius: 0.8rem;   
 }
 .regContent{
@@ -36,72 +50,78 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     background-image:url("/images/art-backlit-city-coast-175659.jpg");
     background-repeat: none;
     background-size: cover;
     background-position-x: -13rem;
-    /* display:none; */
-   
+    /* filter: blur(4px);
+    -webkit-filter: blur(4px); */
+    /* display:none; */  
 }
 .regForm{
     display:flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--colorOne);
-    width:20rem;
+    background-color: var(--primaryColor-1-opacity);
+    width:28rem;
     height: 4 0rem;
     border-radius: 0.8rem; 
     padding: 2rem 0rem;
-    
 }
 .radioContainer {
     display:flex;
     justify-content: center;    
     align-items: center;
     margin: 0.6rem 0.8rem;
-
-
 }
 .h1{
     font-size: 2rem;
-    color:var(--colorTwo);
-    text-align: center;
+    color:var(--primaryColor-3);
+    text-align: center;    
     
 }
 .link{
-    color: var(--colorTwo);
+    color: var(--primaryColor-3);
+    background-color:var(--primaryColor-1-opacity);;
     margin: 2rem;
+    padding: 1rem;
+    border-radius: 3px;
     font-size: 1.5rem;
 }
-
+.radioArea{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+   
+    margin:0 1rem
+}
+.selectArea{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin:0 1rem
+}
+.checkArea{
+    display: flex;
+    
+    align-items: center;
+    margin:0 1rem
+}
 @media (min-width:769px ){
-    .loginForm{
-        width:30rem;    
-    }
-    .loginForm__items{
-        margin:0.3rem 2rem;
-    }
+  
     .loginContent{
         background-position-x: 0rem;
-        /* background-position-y: -20rem; */
-    }
-    .h1{
-        font-size: 2rem;
-        color:var(--colorTwo)
-    }
-    .regForm{
-        width:30rem;
     }
     .regContent{
         background-position-x: 0rem;
-        /* background-position-y: -20rem; */
     }
 }
-@media (min-width:992px ){
+/* @media (min-width:992px ){
     .loginForm{
         width:30rem;    
     }
     .loginForm__items{
         margin:0.4rem 2rem;
     }
-}
+} */
