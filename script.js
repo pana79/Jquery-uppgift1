@@ -238,7 +238,6 @@ $(function () {
         validateRegForm();
     });
     $('#loginForm').on('submit', function (e) {
-        //förhindra att den skickar datat och laddar om sidan
         e.preventDefault();
         validateLoginForm();
 
@@ -267,42 +266,3 @@ $(function () {
 
 
 })
-    // $('#userName').focusout(function(){
-    //     // validateInput('#userName')
-
-
-    //     console.log('trigged')
-    // })
-    // $('#password').focusout(function(){
-    //     // validateInput('#password')
-    //     console.log('trigged')
-    // })
-    // $('#regForm').submit((e) => {
-    //     e.preventDefault();
-
-    //     isEmpty('#firstName');
-    //     isEmpty('#lastName');
-    //     ValidateEmail() 
-
-    // })
-
-         // if(1<valFirstName.length && valFirstName.length<3)
-        // {
-        //     console.log(valFirstName.length)
-        //     console.log('less than three')
-        //     $('#errorMessage').html("<span>shortast name consist of 3 letters</span>")
-        //     $('#errorMessage').show();
-        //     elem.addClass('-error');
-        //     elem.removeClass('-success');
-        // }
-        // if (9<valFirstName.length)
-        // {
-        //     $('#errorMessage').html("<span>longest name consist of 10 letters</span>")
-        //     $('#errorMessage').show();
-        //     console.log('bigger than 9')
-        //     elem.addClass('-error');
-        //     elem.removeClass('-success');
-        // }
-
-
-
