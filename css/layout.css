@@ -27,7 +27,7 @@ p{font-size: 1.3rem}
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("/images/art-backlit-city-coast-175659.jpg");
+    background-image: url("../images/art-backlit-city-coast-175659.jpg");
     background-repeat: none;
     background-size: cover;
     background-position-x: -13rem;
@@ -51,7 +51,7 @@ p{font-size: 1.3rem}
     justify-content: center;
     align-items: center;
 
-    background-image:url("/images/art-backlit-city-coast-175659.jpg");
+    background-image:url("../images/art-backlit-city-coast-175659.jpg");
     background-repeat: none;
     background-size: cover;
     background-position-x: -13rem;
@@ -82,7 +82,7 @@ p{font-size: 1.3rem}
     
 }
 .link{
-    color: var(--primaryColor-3);
+    color: var(--primaryBlack);
     background-color:var(--primaryColor-1-opacity);;
     margin: 2rem;
     padding: 1rem;
